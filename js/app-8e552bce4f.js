@@ -1,1 +1,0 @@
-!function(){var c=document.querySelector(".prosper-inner img:last-child");if(c){var t=!1;setInterval(function(){var s,e,a,l;t?(t=!1,l="toggled",(a=c).classList?a.classList.remove(l):a.className=a.className.replace(new RegExp("(^|\\b)"+l+"(\\b|$)","gi")," ")):(t=!0,e="toggled",(s=c).classList?s.classList.add(e):s.className+=" "+e)},5500)}}();
