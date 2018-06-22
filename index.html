@@ -13,10 +13,14 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Work+Sans:500,600" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/app-a3784e9419.css">
+  <link rel="stylesheet" href="css/app-04a936a581.css">
 </head>
 
 <body>
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body"></div>
+  </div>
   <section class="hero">
     <div class="row">
       <div class="hero__wrapper">
@@ -86,6 +90,9 @@
         <p>
           Typing long but well-formatted issues in Github&rsquo;s markdown editor was a personal pain, so I&rsquo;m currently building a web-based text editor (actually really difficult) that parses Markdown instantly and in-place, using Glimmer.js
         </p>
+        <button class="btn">
+          Try a demo
+        </button>
       </div>
     </div>
   
@@ -103,6 +110,9 @@
         <p>
           An events company sought a way to regularly contact and interact with a pool of talents about their availability for upcoming events. I designed and built a Facebook Messenger chatbot and an accompanying admin interface, to save them a lot of time on a daily basis.
         </p>
+        <button class="btn">
+          Watch a video
+        </button>
       </div>
     </div>
   
@@ -120,6 +130,9 @@
         <p>
           Based loosely on the now defunct <a href="https://github.com/ef4/rfcs/blob/routeable-components/active/0000-routeable-components.md" target="_blank">Routable Components RFC</a>, I implemented routable components for today&rsquo;s Ember as an addon. While I&rsquo;m already using it in production, it&rsquo;s due for a major revamp soon.
         </p>
+        <a href="https://github.com/wongpeiyi/ember-routable-components-today/tree/initial" target="_blank" class="btn">
+          View on Github
+        </a>
       </div>
     </div>
   </section>
@@ -178,6 +191,9 @@
         <p>
           I appreciated the freedom to design and build, as well as the challenge of creating a native-like experience for the mobile web.
         </p>
+        <button class="btn">
+          Watch a video
+        </button>
       </div>
     </div>
   
@@ -198,6 +214,9 @@
         <p>
           I also played a product manager / lead role &mdash; digging up user stories and needs from the customer-facing team, pushing UX further with the designer, debating the API approach, all in addition to leading the frontend development.
         </p>
+        <button class="btn">
+          Watch a video
+        </button>
       </div>
     </div>
   </section>
@@ -231,6 +250,9 @@
         <p>
           I conceptualised, designed and built a gym &amp; dance or yoga studio management app prototype (as an MVP), as the competitors at that time were clunky, legacy systems. I reached out to studios and ran customer interviews with them, before eventually deciding to move on.
         </p>
+        <a href="http://prosper.herokuapp.com/?tour=1" target="_blank" class="btn">
+          View the MVP
+        </a>
       </div>
     </div>
   </section>
@@ -292,8 +314,8 @@
       </div>
       <div class="col col_6">
         <p class="italic">
-          Drop me a note at
-          <a href="mailto://wongpeiyi@gmail.com" target="_blank">wongpeiyi@gmail.com</a>
+          Drop me a note
+          <a id="email" target="_blank"></a>
           <br>
           <span>&mdash; </span>I think we could work well together!
         </p>
@@ -301,26 +323,9 @@
     </div>
   </section>
 
-  <script src="js/app-8e552bce4f.js"></script>
+  <script src="js/app-2db3fb0974.js"></script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121026203-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-121026203-1');
-  </script>
-
-  <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:52086,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
+  
 </body>
 
 </html>
