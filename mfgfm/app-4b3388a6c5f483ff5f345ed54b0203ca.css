@@ -918,24 +918,134 @@ body,
   background: #fff;
   box-sizing: border-box;
   width: 100%;
-  max-width: 800px;
-  height: 100%;
+  max-width: 978px;
+  min-height: 100%;
   margin: 0 auto;
-  padding: 30px; }
+  padding: 45px; }
   #editor:focus {
     outline: 0; }
 
 mark {
-  color: #ccc;
+  color: rgba(0, 0, 0, 0.2);
   background: none; }
+  #editor > :not(.focus) mark {
+    position: absolute;
+    opacity: 0; }
 
-#editor > :not(.focus) mark {
-  opacity: 0;
-  font-size: 0; }
+#editor > :not(.focus) li {
+  margin-left: 0 !important; }
 
-ul.focus li,
+ul li > h1 > mark:first-child,
+ul li > h2 > mark:first-child,
+ul li > h3 > mark:first-child,
+ul li > h4 > mark:first-child,
+ul li > h5 > mark:first-child,
+ul li > h6 > mark:first-child,
+ol li > h1 > mark:first-child,
+ol li > h2 > mark:first-child,
+ol li > h3 > mark:first-child,
+ol li > h4 > mark:first-child,
+ol li > h5 > mark:first-child,
+ol li > h6 > mark:first-child {
+  font-size: 1rem;
+  font-weight: normal; }
+
+ul.focus,
+ul.focus ul,
+ul.focus ol, ul.focus,
+ul.focus ul,
+ul.focus ol,
+ol.focus,
+ol.focus ul,
+ol.focus ol,
+ol.focus,
+ol.focus ul,
+ol.focus ol {
+  list-style: none; }
+
+ul.focus li, ul.focus li,
+ol.focus li,
 ol.focus li {
   min-height: 1.5em; }
+
+mark.before-fence {
+  float: left; }
+
+.fence mark.whitespace {
+  display: none; }
+
+.code-block > code > mark {
+  background: linear-gradient(to left, transparent 2px, rgba(0, 0, 0, 0.025) 2px); }
+
+a > mark {
+  display: none; }
+  a > mark:nth-last-child(2) {
+    color: rgba(3, 102, 214, 0.5); }
+
+.focus a {
+  pointer-events: none; }
+  .focus a:hover {
+    text-decoration: none; }
+  .focus a > mark {
+    display: inline; }
+
+#editor > :not(.focus) a {
+  cursor: pointer; }
+
+.img {
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  display: inline-block; }
+  .img > img {
+    display: none;
+    cursor: default; }
+  a .img > img {
+    cursor: pointer; }
+  .img > mark {
+    display: none; }
+    .img > mark:nth-child(3), .img > mark:nth-child(7) {
+      color: rgba(36, 41, 46, 0.7); }
+    .img > mark:nth-child(5) {
+      color: rgba(3, 102, 214, 0.5); }
+  .img.loaded > img,
+  .img.error > img {
+    display: block; }
+  .img.error {
+    background-size: 16px 16px; }
+    .img.error > img {
+      height: 1.5em; }
+  .focus .img > img {
+    visibility: hidden; }
+  .focus .img > mark {
+    display: inline; }
+
+.emoji > mark,
+.hr > mark {
+  position: absolute; }
+
+.emoji.focus > mark,
+.focus .emoji > mark,
+.hr.focus > mark,
+.focus
+.hr > mark {
+  position: static; }
+
+.emoji.focus > span,
+.focus .emoji > span,
+.hr.focus > span,
+.focus
+.hr > span {
+  display: none; }
+
+.hr.focus {
+  margin: 24px 0;
+  height: 4px; }
+  .hr.focus > mark {
+    position: relative;
+    top: -11px; }
+
+.focus .task-list-wrapper .task-list-item-checkbox {
+  display: none; }
 
 /**
   Markdown Patches
