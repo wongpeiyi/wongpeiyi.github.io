@@ -914,25 +914,31 @@ body,
 #app {
   height: 100%; }
 
-#editor {
+.mfgfm-editor {
   background: #fff;
   box-sizing: border-box;
   width: 100%;
   max-width: 978px;
   min-height: 100%;
   margin: 0 auto;
-  padding: 45px; }
-  #editor:focus {
+  padding: 45px;
+  caret-color: #000; }
+  .mfgfm-editor:focus {
     outline: 0; }
+
+section {
+  display: inline; }
 
 mark {
   color: rgba(0, 0, 0, 0.2);
   background: none; }
-  #editor > :not(.focus) mark {
+  .mfgfm-editor:not(:focus) mark,
+  section > :not(.focus) mark {
     position: absolute;
     opacity: 0; }
 
-#editor > :not(.focus) li {
+.mfgfm-editor:not(:focus) li,
+section > :not(.focus) li {
   margin-left: 0 !important; }
 
 ul li > h1 > mark:first-child,
@@ -950,21 +956,17 @@ ol li > h6 > mark:first-child {
   font-size: 1rem;
   font-weight: normal; }
 
-ul.focus,
-ul.focus ul,
-ul.focus ol, ul.focus,
-ul.focus ul,
-ul.focus ol,
+.mfgfm-editor:focus ul.focus,
+.mfgfm-editor:focus ul.focus ul,
+.mfgfm-editor:focus ul.focus ol, .mfgfm-editor:focus
 ol.focus,
+.mfgfm-editor:focus
 ol.focus ul,
-ol.focus ol,
-ol.focus,
-ol.focus ul,
+.mfgfm-editor:focus
 ol.focus ol {
   list-style: none; }
 
-ul.focus li, ul.focus li,
-ol.focus li,
+.mfgfm-editor:focus ul.focus li, .mfgfm-editor:focus
 ol.focus li {
   min-height: 1.5em; }
 
@@ -982,14 +984,15 @@ a > mark {
   a > mark:nth-last-child(2) {
     color: rgba(3, 102, 214, 0.5); }
 
-.focus a {
+.mfgfm-editor:focus .focus a {
   pointer-events: none; }
-  .focus a:hover {
+  .mfgfm-editor:focus .focus a:hover {
     text-decoration: none; }
-  .focus a > mark {
+  .mfgfm-editor:focus .focus a > mark {
     display: inline; }
 
-#editor > :not(.focus) a {
+.mfgfm-editor:not(:focus) a,
+section > :not(.focus) a {
   cursor: pointer; }
 
 .img {
@@ -1014,37 +1017,37 @@ a > mark {
     background-size: 16px 16px; }
     .img.error > img {
       height: 1.5em; }
-  .focus .img > img {
+  .mfgfm-editor:focus .focus .img > img {
     visibility: hidden; }
-  .focus .img > mark {
+  .mfgfm-editor:focus .focus .img > mark {
     display: inline; }
 
 .emoji > mark,
 .hr > mark {
   position: absolute; }
 
-.emoji.focus > mark,
-.focus .emoji > mark,
+.mfgfm-editor:focus .emoji.focus > mark,
+.mfgfm-editor:focus .focus .emoji > mark, .mfgfm-editor:focus
 .hr.focus > mark,
-.focus
+.mfgfm-editor:focus .focus
 .hr > mark {
   position: static; }
 
-.emoji.focus > span,
-.focus .emoji > span,
+.mfgfm-editor:focus .emoji.focus > span,
+.mfgfm-editor:focus .focus .emoji > span, .mfgfm-editor:focus
 .hr.focus > span,
-.focus
+.mfgfm-editor:focus .focus
 .hr > span {
   display: none; }
 
-.hr.focus {
+.mfgfm-editor:focus .hr.focus {
   margin: 24px 0;
   height: 4px; }
-  .hr.focus > mark {
+  .mfgfm-editor:focus .hr.focus > mark {
     position: relative;
     top: -11px; }
 
-.focus .task-list-wrapper .task-list-item-checkbox {
+.mfgfm-editor:focus .focus .task-list-wrapper .task-list-item-checkbox {
   display: none; }
 
 /**
@@ -1053,3 +1056,9 @@ a > mark {
 .markdown-body li > p {
   margin-top: 0;
   margin-bottom: 0; }
+
+.markdown-body > section:first-child :first-child {
+  margin-top: 0 !important; }
+
+.markdown-body > section:last-child :last-child {
+  margin-bottom: 0 !important; }
